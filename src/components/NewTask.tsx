@@ -19,10 +19,6 @@ const NewTask = () => {
       alert('Введите задачу! Поле не должно быть пустым. Цифры не являются задачей!!!');
       return;
     }
-    // localStorage.setItem('task', JSON.stringify({
-    //   id: Math.random(),
-    //   task: taskRefValue
-    // }))
     dispatch(addTask({
       id: Math.random(),
       task: taskRefValue,
@@ -36,7 +32,6 @@ const NewTask = () => {
 
   return (
     <form className={classes[`new-task`]} onSubmit={submitHandler}>
-      {/* <TextField id="outlined-basic" label="Outlined" variant="outlined" /> */}
       <input type="text" ref={taskRef}/>
       <button>Добавить задачу</button>
     </form>
