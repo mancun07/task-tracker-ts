@@ -1,6 +1,6 @@
 {
-  "homepage": "https://mancun07.github.io/task-tracker-ts",
   "name": "tasks-ts",
+  "homepage": "https://mancun07.github.io/task-tracker-ts",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
