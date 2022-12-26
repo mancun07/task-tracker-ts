@@ -4,7 +4,7 @@ import { RootState, AppThunk } from '../../app/store';
 export interface Task {
   id: number;
   task: string;
-  remark: string; 
+  remark: string|number|undefined; 
 }
 
 export interface TaskState {
@@ -56,7 +56,7 @@ export const taskSlice = createSlice({
       state.ongoingTasks = action.payload.ongoingTasks
       // state.completedTasks = action.payload.completedTasks
     },
-    addRemark: (state, action:PayloadAction<string>) => {
+    addRemark: (state, action:PayloadAction<string|number|undefined>) => {
       // const neededItem = state.tasks.find(el => el.id === action.payload.id);
       // neededItem.remark = action.payload.remark;
       const id = state.chosenTask ? state.chosenTask.id : false;

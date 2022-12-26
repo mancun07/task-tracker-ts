@@ -22,13 +22,23 @@ const App: React.FC = () => {
   // to make data in redux store equal to user local storage
   useEffect(() => {
 
-    const loadedTasks = (localStorage.getItem('tasks') !== null || localStorage.getItem('tasks') !== undefined) ? 
-    JSON.parse(localStorage.getItem('tasks') || '') : {
+    // const loadedTasks = (localStorage.getItem('tasks') !== null || localStorage.getItem('tasks') !== undefined) ? 
+    // JSON.parse(localStorage.getItem('tasks') || '') : {
+    //   tasks: [],
+    //   ongoingTasks: [],
+    //   completedTasks: [],
+    //   chosenTask: null
+    // }
+
+    const storedTasks = localStorage.getItem('tasks');
+    const emptyTasks = {
       tasks: [],
       ongoingTasks: [],
       completedTasks: [],
       chosenTask: null
-    }
+    };
+
+    const loadedTasks = storedTasks ? JSON.parse(storedTasks) : emptyTasks;
 
     // console.log(loadedTasks)
 

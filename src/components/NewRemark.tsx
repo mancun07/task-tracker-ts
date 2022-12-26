@@ -13,18 +13,14 @@ const NewRemark = () => {
 
   // const {remark} = chosenTask;
 
-  const [remark, setRemark] = useState<string|null|undefined>(userRemark);
+  const [remark, setRemark] = useState<string|undefined|number>(userRemark);
 
     // const inputRef = useRef();
     const dispatch = useDispatch(); 
 
     const onSubmitHandler = (e: React.FormEvent) => {
         e.preventDefault();
-        // const inputRefValue = inputRef.current.value;
-        // console.log(inputRefValue);
-        if (remark) {
-          dispatch(addRemark(remark));
-        }    
+        dispatch(addRemark(remark));  
         dispatch(toggleRemarkState());
     }
 
@@ -36,7 +32,7 @@ const NewRemark = () => {
     <div className={classes.remark}>
         <div className={classes.notes}>Пометки к задаче</div>
         <form onSubmit={onSubmitHandler} className={classes.form}>
-            <textarea onChange={e => setRemark(e.target.value)} rows={10} cols={45} name="text"></textarea>
+            <textarea value={remark} onChange={e => setRemark(e.target.value)} rows={10} cols={45} name="text"></textarea>
             <button className={classes.btn}>Добавить</button>
         </form>
         <div className={classes.close} onClick={onCloseHandler}>X</div>
