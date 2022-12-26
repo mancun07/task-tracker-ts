@@ -5,33 +5,18 @@
 }
 
 input {
-    /* border: 1px #ddd solid; */
     font-size: inherit;
     display: block;
     margin: auto;
     padding: 5px 15px;
     min-width: 300px;
     outline: none;
-    /* border: none; */
 }
 
 input:focus {
 background: lightblue;
 border: 2px solid green;
 }
-
-/* .new-task button {
-    font-size: inherit;
-    
-    color: #fff;
-    padding: 12px 15px;
-    border-radius: 10px;
-    cursor: pointer;
-    width: 200px;
-    border: none;
-    margin-top: 10px;
-} */
-
 
          
 .new-task button {

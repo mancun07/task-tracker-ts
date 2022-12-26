@@ -9,9 +9,11 @@
 }
 
 .ongoingTasks:hover {
-    /* transform: rotate(-1deg) scale(1.02);
-    box-shadow: 0 0 20px #eee; */
     cursor: pointer;
+}
+
+.badge-wrapper {
+    text-align: center;
 }
 
 .label {

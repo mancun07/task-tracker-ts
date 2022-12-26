@@ -15,9 +15,11 @@ const Tasks: React.FC = () => {
   return (
     <div className={classes.tasks}>
       <Card>
-      <Badge badgeContent={tasks.length} color="primary"  >
-        <h2>Задачи в работу</h2>
-      </Badge>  
+      <div className={classes[`badge-wrapper`]}>
+      <Badge badgeContent={tasks.length} color="primary"  > 
+      </Badge> 
+      </div> 
+          <h2>Задачи в работу</h2>
           <ul>
               {tasks && tasks.map((item: Task) => {
                   return <TaskItem key={item.id} item={item}/>

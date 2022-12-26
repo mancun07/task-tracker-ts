@@ -4,6 +4,7 @@ import OngoingTaskItem from './OngoingTaskItem'
 import classes from './OngoingTasks.module.css'
 import { Task } from '../features/tasks/taskSlice';
 import {useAppSelector } from '../app/hooks';
+import Badge from '@mui/material/Badge';
 
 const OngoingTasks: React.FC = () => {
 
@@ -12,7 +13,11 @@ const OngoingTasks: React.FC = () => {
     return (
     <div className={classes.ongoingTasks}>
     <Card>
-        <h2>Задачи в работе</h2>
+        <div className={classes[`badge-wrapper`]}>
+            <Badge badgeContent={ongoingTasks.length} color="primary">
+            </Badge>
+        </div>
+        <h2>Задачи в работе</h2> 
         <ul>
             {ongoingTasks && ongoingTasks.map((item: Task) => {
                 return <OngoingTaskItem key={item.id} item={item}/>
