@@ -1,0 +1,40 @@
+.tasks {
+    transition: 0.3s;
+    position: relative;
+    overflow: hidden;
+    min-width: 450px;
+    margin: 0 auto 10px;
+    max-width: 90%;
+    box-shadow: 0 0 20px #eee;
+   
+}
+
+.tasks:hover {
+    /* transform: rotate(-1deg) scale(1.02);
+    box-shadow: 0 0 20px #eee; */
+    cursor: pointer;
+}
+
+.label {
+    background-color: #21D4FD;
+    background-image: linear-gradient(19deg, #21D4FD 0%, #B721FF 100%);    
+    color: #fff;
+    opacity: 0.7;
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    transform: rotateZ(35deg) translateX(30px);
+    padding:0 15px;
+    width:170px;
+    text-align: center;
+
+
+}
+
+
+@media screen and (max-width: 480px) {
+    .tasks {
+        min-width: 0; 
+        width: 95%;  
+  }
+}

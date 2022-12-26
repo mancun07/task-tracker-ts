@@ -1,0 +1,97 @@
+/* .form {
+    position: relative;
+    z-index: 3;
+} */
+
+.remark {
+    /* display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom:0; */
+    /* position: fixed;
+    z-index: 5; */
+    /* text-align: center;
+    height: 100vh;
+    width: 100%;
+    top:0;
+    display: flex;
+    justify-content: center;
+    align-items: center; */
+    /* transform: translateY(-80vh); */
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+
+.notes {
+    background: green;
+    color: #fff;
+    padding: 10px 15px;
+}
+
+.close {
+    position: absolute;
+    /* padding: 15px; */
+    top: 5px;
+    right: 5px;
+    color: #fff;
+    font-size: 1.4rem;
+    cursor: pointer;
+    animation: wiggle 0.2s 0.3s 8 alternate forwards;
+}
+
+textarea {
+    display: block;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+
+
+         
+.btn  {
+    cursor: pointer;
+    background-image: linear-gradient(to right, #7474BF 0%, #348AC7  51%, #7474BF  100%);
+    margin: 10px auto;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+    border: none;
+  }
+
+  .btn:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+  }
+ 
+
+  @keyframes wiggle {
+    0% {
+        transform: rotate(0);
+        opacity: 1;
+    }
+    50% {
+        transform: rotate(-10deg);
+        opacity: 0.8;
+    }
+    100% {
+        transform: rotate(10deg);
+        opacity: 1;
+    }
+  }

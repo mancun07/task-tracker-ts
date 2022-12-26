@@ -1,0 +1,65 @@
+.new-task {
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+input {
+    /* border: 1px #ddd solid; */
+    font-size: inherit;
+    display: block;
+    margin: auto;
+    padding: 5px 15px;
+    min-width: 300px;
+    outline: none;
+    /* border: none; */
+}
+
+input:focus {
+background: lightblue;
+border: 2px solid green;
+}
+
+/* .new-task button {
+    font-size: inherit;
+    
+    color: #fff;
+    padding: 12px 15px;
+    border-radius: 10px;
+    cursor: pointer;
+    width: 200px;
+    border: none;
+    margin-top: 10px;
+} */
+
+
+         
+.new-task button {
+    background-image: linear-gradient(to right, #000000 0%, #434343  51%, #000000  100%);
+    margin: 10px auto;
+    padding: 15px 45px;
+    text-align: center;
+    text-transform: uppercase;
+    transition: 0.5s;
+    background-size: 200% auto;
+    color: white;            
+    box-shadow: 0 0 20px #eee;
+    border-radius: 10px;
+    display: block;
+  border: none;
+  }
+
+  .new-task button:hover {
+    background-position: right center; /* change the direction of the change here */
+    color: #fff;
+    text-decoration: none;
+    cursor: pointer;
+  }
+ 
+
+
+         
+         
+
+ 
+ 
