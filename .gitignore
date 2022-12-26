@@ -21,3 +21,13 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+
+# Ignored files
+*.ts
+!*.d.ts
+# IDE files
+.vscode
+.json
+# Source files
+src
