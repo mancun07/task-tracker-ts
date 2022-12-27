@@ -1,6 +1,6 @@
 import React, {useRef} from 'react'
 import { addTask } from '../features/tasks/taskSlice';
-import { showNotification } from '../features/tasks/uiSlice';
+import { toggleNotification } from '../features/tasks/uiSlice';
 import classes from './NewTask.module.css'
 import {useAppDispatch, useAppSelector} from '../app/hooks'
 
@@ -19,7 +19,10 @@ const NewTask = () => {
 
     if (taskRefValue === '' || (typeof(taskRefValue) !== 'string')) {
       // alert('Введите задачу! Поле не должно быть пустым. Цифры не являются задачей!!!');
-      dispatch(showNotification())
+        dispatch(toggleNotification())
+      setTimeout(() => {
+        dispatch(toggleNotification())
+      }, 3000)
       return;
     }
     dispatch(addTask({

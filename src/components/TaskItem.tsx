@@ -12,23 +12,15 @@ import {useAppDispatch } from '../app/hooks';
 import Tooltip from '@mui/material/Tooltip';
 import Fade from '@mui/material/Zoom';
 
-// const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
 const TaskItem: React.FC<{item: Task}> = (props) => {
 
   const dispatch = useAppDispatch();
 
-  // const remarkIsShown = useAppSelector(state => state.ui.remarkIsShown);
-
   const addOngoingTaskHandler = () => {
     dispatch(removeTask(props.item.id))  
     dispatch(addOnGoingTask(props.item))
   }
-
-  // const addCompletedTaskHandler = () => {
-  //   dispatch(removeTask(props.item.id))  
-  //   dispatch(addCompletedTask(props.item))
-  // }
 
   const removeTaskHandler = () => {
     dispatch(removeTask(props.item.id))
@@ -49,19 +41,10 @@ const TaskItem: React.FC<{item: Task}> = (props) => {
           <IconButton onClick={addOngoingTaskHandler} aria-label="add to shopping cart">
             < ArrowForwardIcon   sx={{ color: yellow[500] }}/>
           </IconButton>
-          {/* <IconButton aria-label="delete">
-            <CheckIcon onClick={addCompletedTaskHandler}/>
-          </IconButton> */}
-          {/* <Button variant="contained" onClick={removeTaskHandler}>Уд.</Button> */}
           <IconButton onClick={removeTaskHandler} aria-label="delete">
             <DeleteIcon sx={{ color: green[500] }}/>
           </IconButton>
-          {/* <Checkbox {...label} /> */}
-          {/* <IconButton onClick={openRemarkHandler} aria-label="delete">
-            <AppleIcon  sx={{ color: yellow[500] }}/>
-          </IconButton> */}
       </motion.li>
-      {/* {remarkIsShown && <NewRemark />} */}
     </Fragment>
 
   )

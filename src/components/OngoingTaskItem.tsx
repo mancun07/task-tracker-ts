@@ -11,17 +11,10 @@ import Tooltip from '@mui/material/Tooltip';
 import Fade from '@mui/material/Zoom';
 
 
-// const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
-
 const OngoingTaskItem: React.FC<{item: Task}> = (props) => {
 
     const dispatch = useDispatch();
 
-
-  // const addOnCompletedTaskHandler = () => {
-  //   dispatch(removeOnGoingTask(props.item.id))  
-  //   dispatch(addCompletedTask(props.item))
-  // }
 
   const removeTaskHandler = () => {
     dispatch(removeOnGoingTask(props.item.id))  
@@ -37,11 +30,9 @@ const OngoingTaskItem: React.FC<{item: Task}> = (props) => {
        <Tooltip title="При клике на задачу Вы можете оставлять нужные комментарии" TransitionComponent={Fade}  TransitionProps={{ timeout: 600 }}>
         <span onClick={openRemarkHandler}>{props.item.task}</span>
       </Tooltip>
-        {/* <button onClick={addOnCompletedTaskHandler}>Вып-но</button> */}
         <IconButton onClick={removeTaskHandler} aria-label="delete">
             <DeleteIcon sx={{ color: green[500] }}/>
           </IconButton>
-        {/* <Checkbox {...label}/> */}
     </motion.li>
   )
 }

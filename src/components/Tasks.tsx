@@ -10,7 +10,6 @@ import {useAppSelector } from '../app/hooks';
 const Tasks: React.FC = () => {
 
   const tasks = useAppSelector(state => state.tasks.tasks)
-  // console.log(tasks)
 
   return (
     <div className={classes.tasks}>

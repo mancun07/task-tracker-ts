@@ -17,14 +17,14 @@ export const uiSlice = createSlice({
     toggleRemarkState: (state) => {
       state.remarkIsShown = !state.remarkIsShown
     },
-    showNotification: (state) => {
+    toggleNotification: (state) => {
       state.notificationIsShown = !state.notificationIsShown
     }
   },
 })
 
 
-export const { toggleRemarkState, showNotification } = uiSlice.actions;
+export const { toggleRemarkState, toggleNotification } = uiSlice.actions;
 
 
 export default uiSlice.reducer;

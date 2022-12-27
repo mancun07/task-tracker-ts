@@ -7,7 +7,7 @@ import Backdrop from './components/UI/Backdrop';
 import Layout from './components/UI/Layout';
 import { updateRedux } from './features/tasks/taskSlice';
 import {useAppSelector, useAppDispatch} from './app/hooks'
-import Notification from './components/UI/Notification';
+import Notification from './components/Notification';
 
 
 let firstLoading = true;
@@ -36,8 +36,6 @@ const App: React.FC = () => {
 
     const loadedTasks = storedTasks ? JSON.parse(storedTasks) : emptyTasks;
 
-    // console.log(loadedTasks)
-
     console.log('Hell0 from 1st useEffect');
 
     dispatch(updateRedux(loadedTasks))
@@ -54,8 +52,6 @@ const App: React.FC = () => {
    
   }, [allTasks])
 
-  let text = "Вы не ввели задачу";
-
 
   return (
     <Layout>
@@ -68,7 +64,7 @@ const App: React.FC = () => {
           {remarkIsShown && <Backdrop>
               <NewRemark />
           </Backdrop> }
-          {notificationIsShown && <Notification title={text} />}
+          {notificationIsShown && <Notification title={'Вы не ввели задачу'}/>}
         </div>
     </Layout>
 
