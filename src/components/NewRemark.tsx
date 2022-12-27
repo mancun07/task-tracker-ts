@@ -8,14 +8,11 @@ import {useAppSelector} from '../app/hooks'
 
 const NewRemark = () => {
 
-  // const chosenTask = useAppSelector(state => state.tasks.chosenTask);
-  const userRemark = useAppSelector(state => state.tasks.chosenTask?.remark);
 
-  // const {remark} = chosenTask;
+  const userRemark = useAppSelector(state => state.tasks.chosenTask?.remark);
 
   const [remark, setRemark] = useState<string|undefined|number>(userRemark);
 
-    // const inputRef = useRef();
     const dispatch = useDispatch(); 
 
     const onSubmitHandler = (e: React.FormEvent) => {
