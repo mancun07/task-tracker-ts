@@ -7,6 +7,8 @@ import Backdrop from './components/UI/Backdrop';
 import Layout from './components/UI/Layout';
 import { updateRedux } from './features/tasks/taskSlice';
 import {useAppSelector, useAppDispatch} from './app/hooks'
+import Notification from './components/UI/Notification';
+
 
 let firstLoading = true;
 
@@ -17,18 +19,12 @@ const App: React.FC = () => {
   const dispatch = useAppDispatch();
   const allTasks = useAppSelector(state => state.tasks)
   const remarkIsShown = useAppSelector(state => state.ui.remarkIsShown)
+  const notificationIsShown = useAppSelector(state => state.ui.notificationIsShown)
+ 
 
 
   // to make data in redux store equal to user local storage
   useEffect(() => {
-
-    // const loadedTasks = (localStorage.getItem('tasks') !== null || localStorage.getItem('tasks') !== undefined) ? 
-    // JSON.parse(localStorage.getItem('tasks') || '') : {
-    //   tasks: [],
-    //   ongoingTasks: [],
-    //   completedTasks: [],
-    //   chosenTask: null
-    // }
 
     const storedTasks = localStorage.getItem('tasks');
     const emptyTasks = {
@@ -58,6 +54,8 @@ const App: React.FC = () => {
    
   }, [allTasks])
 
+  let text = "Вы не ввели задачу";
+
 
   return (
     <Layout>
@@ -70,6 +68,7 @@ const App: React.FC = () => {
           {remarkIsShown && <Backdrop>
               <NewRemark />
           </Backdrop> }
+          {notificationIsShown && <Notification title={text} />}
         </div>
     </Layout>
 

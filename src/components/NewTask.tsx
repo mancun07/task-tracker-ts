@@ -1,12 +1,14 @@
 import React, {useRef} from 'react'
 import { addTask } from '../features/tasks/taskSlice';
+import { showNotification } from '../features/tasks/uiSlice';
 import classes from './NewTask.module.css'
-import {useAppDispatch} from '../app/hooks'
+import {useAppDispatch, useAppSelector} from '../app/hooks'
 
 
 const NewTask = () => {
 
   const taskRef = useRef<HTMLInputElement>(null);
+  const notificationIsShown = useAppSelector(state => state.ui.notificationIsShown)
 
   const dispatch = useAppDispatch();
   // const tasks = useAppSelector(state => state.tasks.tasks)
@@ -16,7 +18,8 @@ const NewTask = () => {
     const taskRefValue = taskRef.current?.value;
 
     if (taskRefValue === '' || (typeof(taskRefValue) !== 'string')) {
-      alert('Введите задачу! Поле не должно быть пустым. Цифры не являются задачей!!!');
+      // alert('Введите задачу! Поле не должно быть пустым. Цифры не являются задачей!!!');
+      dispatch(showNotification())
       return;
     }
     dispatch(addTask({

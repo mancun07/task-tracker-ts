@@ -9,6 +9,8 @@ import {motion} from 'framer-motion';
 import { toggleRemarkState } from '../features/tasks/uiSlice';
 import {Task} from '../features/tasks/taskSlice';
 import {useAppDispatch } from '../app/hooks';
+import Tooltip from '@mui/material/Tooltip';
+import Fade from '@mui/material/Zoom';
 
 // const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
 
@@ -41,7 +43,9 @@ const TaskItem: React.FC<{item: Task}> = (props) => {
   return (
     <Fragment>
       <motion.li initial={{x: '-100vw'}} animate={{ x: 0 }}>
-          <span onClick={openRemarkHandler}>{props.item.task}</span>
+          <Tooltip title="При клике на задачу Вы можете оставлять нужные комментарии" TransitionComponent={Fade}  TransitionProps={{ timeout: 600 }}>
+            <span onClick={openRemarkHandler}>{props.item.task}</span>
+          </Tooltip>
           <IconButton onClick={addOngoingTaskHandler} aria-label="add to shopping cart">
             < ArrowForwardIcon   sx={{ color: yellow[500] }}/>
           </IconButton>

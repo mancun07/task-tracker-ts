@@ -7,6 +7,8 @@ import DeleteIcon from '@mui/icons-material/Delete';
 import { green } from '@mui/material/colors';
 import {motion} from 'framer-motion';
 import { Task } from '../features/tasks/taskSlice';
+import Tooltip from '@mui/material/Tooltip';
+import Fade from '@mui/material/Zoom';
 
 
 // const label = { inputProps: { 'aria-label': 'Checkbox demo' } };
@@ -32,7 +34,9 @@ const OngoingTaskItem: React.FC<{item: Task}> = (props) => {
 
   return (
     <motion.li initial={{y: '-100vh'}} animate={{y: 0}}>
+       <Tooltip title="При клике на задачу Вы можете оставлять нужные комментарии" TransitionComponent={Fade}  TransitionProps={{ timeout: 600 }}>
         <span onClick={openRemarkHandler}>{props.item.task}</span>
+      </Tooltip>
         {/* <button onClick={addOnCompletedTaskHandler}>Вып-но</button> */}
         <IconButton onClick={removeTaskHandler} aria-label="delete">
             <DeleteIcon sx={{ color: green[500] }}/>
