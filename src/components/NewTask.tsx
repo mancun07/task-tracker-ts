@@ -3,7 +3,6 @@ import { addTask } from '../features/tasks/taskSlice';
 import { toggleNotification } from '../features/tasks/uiSlice';
 import classes from './NewTask.module.css';
 import {useAppDispatch, useAppSelector} from '../app/hooks';
-import {v4} from 'uuid';
 
 
 const NewTask = () => {
@@ -24,7 +23,7 @@ const NewTask = () => {
       return;
     }
     dispatch(addTask({
-      id: +v4(),
+      id: Math.random(),
       task: taskRefValue,
       remark: ''
     }));
