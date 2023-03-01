@@ -41,3 +41,7 @@ ul {
   gap: 60px;
   flex-wrap: wrap;
 }
+
+button:active {
+  transform: scale(0.98);
+}
